@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv" style = "height : 200px ; width: 200px;"><h1>1</h1></div>
+
+    <!-------------------Append Child----------------->
+
+    <div id="myDiv1" style = "height : 50px ; width: 200px;"></div>
+
+    <!-----------------Button Click--------------->
+
+    <button id = "myButton">submit</button>
+
+    <!-----------------Button mouseover--------------->
+
+    <button id = "myButton1">Mouse over Me</button>
+
+    <!----------------title add-------------->
+    
+    <!--------------Remove class-->
+
+    <div class="myBox" id = "myBoxId">remove class</div>
+
+    <!-----------From Parent to Child------------------------------->
+
+    <div id="parent">
+        <p>remove child</p>
+        <div id="child">
+            THis is a child element.
+        </div>
+    </div>
+
+    <!---------------------button (show Alert)------------------------->
+
+    <button id="btn">Click me to get alert</button>
+
+
+    <!-----------------------------List------------------>
+
+   
+    <div>
+        <ul id="my-element"></ul>
+    </div>
+    
+
+    <script>
+
+       let element =  document.getElementById('myDiv');
+       element.style.backgroundColor = "red";
+       element.style.color = "white";
+
+       //--------------Append Child-----------
+       
+       let myDiv1 = document.getElementById('myDiv1');  
+       let newElement = document.createElement("p");
+       newElement.innerHTML = "This is my new Paragraph";
+       newElement.style.color = "green";
+       newElement.style.backgroundColor = "red"; //height = ""
+       myDiv1.appendChild(newElement);
+
+
+       //----------------Button Click--------------------
+
+        let button = document.getElementById('myButton');
+        button.addEventListener("click",function(){
+            button.innerHTML = "I am clicked"
+        })
+        
+        //---------------------mouse over----------------
+
+        let button1 = document.getElementById('myButton1');
+        button1.addEventListener("mouseover", function(){
+            button1.innerHTML = " I am  mouseovered"
+        })
+
+        //------------------------title-------------
+
+        document.title = "this is my title"
+
+
+        //-----------------remove class-----------------
+        let myelement = document.getElementById('myBoxId');
+        myelement.classList.remove('myBox')//add
+
+
+        //-----------from child to parent------------
+
+        let myChild = document.getElementById('child');
+        myChild.parentNode.removeChild(myChild)
+
+
+        //-----------button (show Alert)------------
+
+        let myBtn = document.getElementById('btn');
+        myBtn.addEventListener("click", ()=>alert("i am clicked")
+        )
+
+        //--------------List-----------------------
+
+        myElement22 = document.getElementById('my-element')
+        myElement22.innerHTML = 
+        `<li>Apple</li>
+        <li>Orange</li>
+        <li>fruits</li>`
+      
+    </script>
+    
+</body>
+</html>
